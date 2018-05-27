@@ -1,15 +1,13 @@
 version: 2
 jobs:
   build:
-    machine:
-     environment:
-        ADB_INSTALL_TIMEOUT: 12
-        ANDROID_HOME: /usr/local/android-sdk-linux
     working_directory: ~/code
     docker:
         - image: circleci/android:api-25-alpha
     environment:
       JVM_OPTS: -Xmx3200m
+      ADB_INSTALL_TIMEOUT: 12
+      ANDROID_HOME: /usr/local/android-sdk-linux
     steps:
       - checkout
       - restore_cache:
