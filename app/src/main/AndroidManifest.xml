@@ -46,6 +46,7 @@
         <activity
             android:name=".activities.AuthenticationActivity"
             android:label="@string/title_activity_authentication"></activity>
+         <uses-library android:name="android.test.runner"/>
     </application>
 
 </manifest>
