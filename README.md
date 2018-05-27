@@ -30,20 +30,6 @@ A sample android application that showcases different Espresso Automation featur
 ``` sh
 ./gradlew app:connectedAndroidTest
 ```
-
-### From command-line via adb
-- Install the app and the test app on the device. For example:
-
-``` sh
-./gradlew app:installFlavor2Debug app:installFlavor2DebugAndroidTest
-```
-
-- To run the Instrumentation tests in the `app` module execute:
-
-``` sh
-adb shell am instrument -w com.example.android.testing.blueprint.flavor2.test/android.support.test.runner.AndroidJUnitRunner
-```
-
 See the [Modules](#modules), and custom [Gradle command-line arguments](#custom-gradle-command-line-arguments) sections to learn how to execute tests for specific modules and pass custom arguments to AndroidJUnitRunner.
 
 ## Testing frameworks and APIs
