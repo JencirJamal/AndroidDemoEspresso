@@ -19,4 +19,12 @@
     <string name="text_password">Password</string>
     <string name="button_login">Login</string>
     <string name="message_login_fail">Login failed</string>
+
+    <!-- AuthenticationActivityInstrumentationTest -->
+    <string name="valid_name">whiteelephant261</string>
+    <string name="valid_pword">video1</string>
+    <!-- MainActivityInstrumentationTest -->
+    <string name="search_text">sa</string>
+    <string name="selected_driver_name">Sarah Friedrich</string>
+
 </resources>

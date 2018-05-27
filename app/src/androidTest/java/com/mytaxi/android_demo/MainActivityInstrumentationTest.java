@@ -42,15 +42,21 @@ public class MainActivityInstrumentationTest {
     @After
     public void deregisterIdleResources(){
         IdlingRegistry.getInstance().unregister(mainActivityTestRule.getActivity().getEspressoIdlingResourceForMainActivity());
-
     }
 
+    /**
+     * Test case that evaluates following instructions
+     * 1. search for a driver matching his name containing specific characters.
+     * 2. select a specific driver from the search results
+     * 3. tap on the call button of searched driver to make a call
+     *
+     */
     @Test
-    public void searchDriverAndCall() {
+    public void testSearchDriverAndCall() {
 
         onView(withId(R.id.textSearch)).check(matches(isDisplayed()));
-        onView(withId(R.id.textSearch)).perform(typeText("sa"));
-        onData(TestsHelper.getDriverWithName(Matchers.containsString("Sarah Friedrich")))
+        onView(withId(R.id.textSearch)).perform(typeText(InstrumentationTestsHelper.getResourceString(R.string.search_text)));
+        onData(InstrumentationTestsHelper.getDriverWithName(Matchers.containsString(InstrumentationTestsHelper.getResourceString(R.string.selected_driver_name))))
                 .inRoot(RootMatchers.isPlatformPopup())
                 .perform(click());
         onView(withId(R.id.fab)).perform(click());

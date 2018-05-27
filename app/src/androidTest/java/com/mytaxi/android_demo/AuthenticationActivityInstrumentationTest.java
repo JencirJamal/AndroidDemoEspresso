@@ -43,13 +43,20 @@ public class AuthenticationActivityInstrumentationTest{
     }
 
 
+    /**
+     * Test case that evaluates following instructions
+     * 1. Enter valid username
+     * 2. Enter valid password
+     * 3. tap on login button for the user to signIn
+     *
+     */
     @Test
-    public void enterValidLoginCredentials() throws InterruptedException {
+    public void testEnterValidLoginCredentials() throws InterruptedException {
         // Type text and then press the button.
         onView(withId(R.id.edt_username))
-                .perform(typeText("whiteelephant261"), closeSoftKeyboard());
+                .perform(typeText(InstrumentationTestsHelper.getResourceString(R.string.valid_name)), closeSoftKeyboard());
         onView(withId(R.id.edt_password))
-                .perform(typeText("video1"), closeSoftKeyboard());
+                .perform(typeText(InstrumentationTestsHelper.getResourceString(R.string.valid_pword)), closeSoftKeyboard());
 
         onView(withId(R.id.btn_login)).perform(click());
 
